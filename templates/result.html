@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>Hasil Scan</title></head>
+<body>
+  {% if status == 'success' %}
+    <h2 style="color:green">✅ {{ nama }} berhasil klaim souvenir.</h2>
+  {% elif status == 'duplicate' %}
+    <h2 style="color:orange">⚠️ {{ nama }} sudah pernah klaim sebelumnya.</h2>
+  {% else %}
+    <h2 style="color:red">❌ Barcode tidak dikenal.</h2>
+  {% endif %}
+  <a href="/scan">Kembali Scan</a>
+</body>
+</html>

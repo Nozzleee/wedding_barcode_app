@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><title>Generate QR Code Tamu</title></head>
+<body>
+  <h2>Input Nama Tamu</h2>
+  <form method="POST" action="/generate_qr">
+    Nama: <input type="text" name="nama" required>
+    <br> Pilih Daftar:
+    <select name="folder" required>
+      <option value="tamu_wulan.csv">Tamu Wulan</option>
+      <option value="tamu_erik.csv">Tamu Erik</option>
+    </select><br>
+    <button type="submit">Generate QR</button>
+  </form>
+  {% if qr_url %}
+    <h3>QR Code:</h3>
+    <img src="{{ qr_url }}" alt="QR Code">
+  {% endif %}
+  <br><br>
+  <a href="/scan">Menu Scan Barcode</a>
+</body>
+</html>
